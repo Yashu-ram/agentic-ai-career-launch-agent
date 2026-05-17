@@ -1,0 +1,7 @@
+
+TOOL TRACE
+-----------
+Tool: keyword_overlap
+Arguments: {'cv': 'Python SQL Power BI Tableau Machine Learning', 'jd': 'Looking for Python SQL Power BI skills'}
+Result: {'count': 2, 'matching_keywords': ['python', 'power']}
+Time Taken: 0.00 sec
