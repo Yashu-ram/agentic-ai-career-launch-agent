@@ -1,2 +1,2 @@
 # agentic-ai-career-launch-agent
-Secure Agentic AI Career Launch Assistant built with RAG, FAISS vector search, prompt injection defense, structured outputs, and evaluation testing.
+Agentic AI Career Guidance Assistant built using FastAPI, ChromaDB, embeddings, RAG architecture, prompt injection defense, and evaluation testing.
