@@ -1,51 +1,72 @@
-# Career Launch Agent
+# 🚀 Career Launch Agent
 
-A production-grade AI-powered Career Launch Agent built using:
+A production-grade AI-powered Career Launch Agent built using Retrieval-Augmented Generation (RAG), ChromaDB vector search, FastAPI, and local LLMs.
 
-- RAG (Retrieval-Augmented Generation)
-- ChromaDB Vector Database
-- Sentence Transformers
-- Ollama + Qwen2.5
-- FastAPI
-- Structured JSON Outputs
-- Pydantic Validation
-- Safety Guardrails
+The system helps users analyze resumes against job descriptions, identify missing skills, generate improvement roadmaps, and provide structured AI-powered career guidance while implementing safety guardrails and evaluation pipelines.
 
 ---
 
-# Features
+# 🎯 Why This Project
+
+Traditional AI chatbots may hallucinate, provide unsafe outputs, or generate unreliable career advice.
+
+This project was built to explore:
+- Secure AI system design
+- Retrieval-Augmented Generation (RAG)
+- Structured JSON outputs
+- AI safety guardrails
+- Prompt injection defense
+- Evaluation and reliability testing
+
+The goal was to create a safer and more reliable AI assistant for career guidance workflows.
+
+---
+
+# ✨ Features
 
 - Resume and Job Description Analysis
-- Semantic Retrieval using ChromaDB
-- Structured JSON Responses
+- Retrieval-Augmented Generation (RAG)
+- ChromaDB Vector Database Retrieval
+- Embedding-based Semantic Search
+- Structured JSON Outputs
+- Pydantic Validation
 - Retry Handling for Invalid Outputs
 - Prompt Injection Detection
 - Human Review Escalation
+- Sensitive Topic Detection
 - FastAPI Backend API
-- Safety Topic Detection
 - Golden Test Evaluation Suite
+- Output Validation & Normalization
 
 ---
 
-# Project Architecture
+# 🏗️ System Architecture
 
 ```text
 User Query
     ↓
+Safety Filters
+    ↓
 Retriever
     ↓
-ChromaDB
+ChromaDB Vector Search
     ↓
 Qwen2.5 via Ollama
     ↓
-Structured JSON
+Structured JSON Output
     ↓
 Pydantic Validation
     ↓
-Safety Filters
+Output Guardrails
     ↓
 FastAPI Response
-Project Structure
+```
+
+---
+
+# 📂 Project Structure
+
+```text
 career-launch-agent/
 │
 ├── api/
@@ -77,42 +98,164 @@ career-launch-agent/
 │   └── job_descriptions/
 │
 ├── embeddings/
+│
 ├── README.md
 ├── requirements.txt
 ├── pyproject.toml
 └── uv.lock
-Installation
-Clone Repository
-git clone <your-repository-url>
-cd career-launch-agent
-Create Virtual Environment
+```
+
+---
+
+# 🛠️ Tech Stack
+
+- Python 3.11+
+- FastAPI
+- ChromaDB
+- SentenceTransformers
+- Ollama
+- Qwen2.5
+- Pydantic
+- Uvicorn
+- Pytest
+- uv
+
+---
+
+# 🛡️ Safety Features
+
+- Prompt Injection Detection
+- Sensitive Topic Detection
+- Human Review Escalation
+- Output Validation
+- Structured Response Enforcement
+- Retry Handling for Malformed JSON
+
+---
+
+# ✅ Evaluation & Reliability
+
+The project includes:
+- Golden test evaluation suite
+- Structured schema validation
+- Retry logic for malformed outputs
+- Output normalization
+- Failure documentation
+- Safety guardrails
+
+---
+
+# 📊 Test Results
+
+```bash
+5/5 tests passed
+```
+
+Test coverage includes:
+- Prompt injection detection
+- Citation validation
+- Structured response schema
+- Human review escalation
+- Empty query handling
+
+---
+
+# ⚙️ Installation
+
+## Clone Repository
+
+```bash
+git clone https://github.com/Yashu-ram/agentic-ai-career-launch-agent.git
+cd agentic-ai-career-launch-agent
+```
+
+---
+
+## Create Virtual Environment
+
+```bash
 uv venv
-Activate Virtual Environment
-Windows PowerShell
+```
+
+---
+
+## Activate Virtual Environment
+
+### Windows PowerShell
+
+```bash
 .venv\Scripts\activate
-Mac/Linux
+```
+
+### Mac/Linux
+
+```bash
 source .venv/bin/activate
-Install Dependencies
+```
+
+---
+
+## Install Dependencies
+
+```bash
 uv sync
-Install Ollama
+```
+
+---
+
+# 🤖 Install Ollama
 
 Download and install Ollama:
 
 https://ollama.com/download
 
-Pull Qwen Model
+---
+
+# 📥 Pull Qwen Model
+
+```bash
 ollama pull qwen2.5:3b
-Running the RAG Pipeline
+```
+
+---
+
+# ▶️ Running the RAG Pipeline
+
+```bash
 python -m rag_agent.main
-Running FastAPI Server
+```
+
+---
+
+# 🌐 Running FastAPI Server
+
+```bash
 uvicorn api.app:app --reload
-Open Swagger UI
+```
+
+---
+
+# 📄 Open Swagger UI
+
+```text
 http://127.0.0.1:8000/docs
-Example API Request
+```
+
+---
+
+# 📥 Example API Request
+
+```json
 {
   "question": "How well does this candidate match the Python developer role?"
 }
-Example Structured Output
+```
+
+---
+
+# 📤 Example Structured Output
+
+```json
 {
   "answer": "The resume highlights skills in Python, SQL, and Power BI. The candidate is missing experience with AWS.",
 
@@ -138,61 +281,69 @@ Example Structured Output
 
   "human_review_flag": false
 }
-Running Evaluation Tests
+```
+
+---
+
+# 🧪 Running Evaluation Tests
+
+```bash
+pytest
+```
+
+OR
+
+```bash
 python evaluation/run_tests.py
-Safety Features
-Prompt Injection Detection
-Output Validation
-Human Review Escalation
-Medical/Legal/Confidential Topic Filtering
-Structured Output Validation
-Retry Handling for Malformed JSON
-Evaluation & Reliability
+```
 
-The project includes:
+---
 
-Golden test evaluation suite
-Structured schema validation
-Retry logic for malformed outputs
-Output normalization
-Failure documentation
-Known Limitations
-Small local models may occasionally generate malformed JSON
-Retrieval quality depends on document quality
-Local models may hallucinate occasionally
-Not intended for hiring automation decisions
-Not intended for medical or legal advice
-Tech Stack
-Python 3.11+
-FastAPI
-ChromaDB
-SentenceTransformers
-Ollama
-Qwen2.5
-Pydantic
-Uvicorn
-uv
-Future Improvements
-Streaming responses
-Better evaluation metrics
-Docker deployment
-Authentication layer
-Frontend UI integration
-Cloud deployment support
-Demo Walkthrough
+# 📸 Demo Walkthrough
 
 The project demo includes:
+- Resume loading
+- ChromaDB retrieval pipeline
+- Structured JSON outputs
+- Validation and retry handling
+- Prompt injection blocking
+- Safety filtering
+- FastAPI endpoint testing
+- Evaluation testing workflow
 
-Resume loading
-Retrieval pipeline
-Structured JSON outputs
-Validation and retry handling
-Safety filtering
-FastAPI endpoint testing
-Author
+---
+
+# ⚠️ Known Limitations
+
+- Small local models may occasionally generate malformed JSON
+- Retrieval quality depends on document quality
+- Local LLMs may hallucinate occasionally
+- Not intended for hiring automation decisions
+- Not intended for medical or legal advice
+
+---
+
+# 🚀 Future Improvements
+
+- Streaming responses
+- Better evaluation metrics
+- Docker deployment
+- Authentication layer
+- Frontend UI integration
+- Cloud deployment support
+- Hybrid Search
+- Re-ranking pipelines
+- Multi-agent workflows
+- AI observability integration
+
+---
+
+# 👩‍💻 Author
 
 Yashaswini R
 
-License
+---
 
-This project is intended for educational and portfolio purposes.
+# 📜 License
+
+This project is intended for educational, research, and portfolio purposes.
