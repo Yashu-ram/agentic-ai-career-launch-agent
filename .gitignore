@@ -1,6 +1,8 @@
 .venv/
 __pycache__/
-.ipynb_checkpoints/ # Python-generated files
+.ipynb_checkpoints/
+
+# Python-generated files
 __pycache__/
 *.py[oc]
 build/
@@ -10,3 +12,9 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Environment variables
+.env
+
+# Vector database
+chroma_db/
